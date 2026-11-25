@@ -4,25 +4,30 @@
 
 # Sum up 25 November's world news in one image
 
-Entry for the [make.fun](https://make.fun/c/news-image-20261125) competition
-**news-image-20261125** — "Sum up 25 November's world news in one image".
+My submission to the [make.fun](https://make.fun/c/news-image-20261125)
+contest **news-image-20261125** — one picture that captures the world news
+of Wednesday 25 November 2026.
 
-![Entry image](entry.png)
+![The entry](entry.png)
 
-## How it works
+## What this does
 
-`main.ts` (Node 22, standard library only) copies the pre-built image
-`entry.png` to the output directory (`$MAKEFUN_OUTPUT_DIR`, default
-`/output`) as `entry.png`. The program runs with no network and writes the
-same bytes on every run.
+`main.ts` runs on Node 22 with nothing but the standard library. It takes
+the finished picture `entry.png` from this repository and places a copy at
+`$MAKEFUN_OUTPUT_DIR/entry.png` (falling back to `/output` when that
+variable is unset). Before copying it checks the file really is a PNG, that
+it stays under the 1 MiB limit and within 1024×1024 pixels, then confirms
+the written bytes match the source exactly. No network is used, and every
+run produces identical output.
 
-## Files
+## Contents
 
-- `entry.png` — the entry image (1024×1024 PNG, sums up the world news of Wednesday 25 November 2026)
-- `main.ts` — the entry program
+- `entry.png` — the submitted picture (1024×1024 PNG, 438,674 bytes, a
+  summary of the world news of 25 November 2026)
+- `main.ts` — the program that validates and copies the picture
 - `LICENSE` — MIT License
-- `owner.json` — payout wallet (Solana)
-- `.makefun/owner.json` — claim file naming the payout wallet
+- `owner.json` — the Solana payout wallet
+- `.makefun/owner.json` — claim file with the same payout wallet
 
 ## License
 
